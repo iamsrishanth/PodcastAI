@@ -1,0 +1,233 @@
+/* Additional App-specific styles */
+
+/* Animations for the step items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-item {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.step-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.step-item:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.step-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.step-item:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.step-item:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.step-item:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+.step-item:nth-child(7) {
+  animation-delay: 0.4s;
+}
+
+/* Loading spinner in step number */
+.step-number {
+  position: relative;
+}
+
+.step-item.active .step-number {
+  background: transparent;
+  border: 3px solid var(--accent-primary);
+}
+
+/* Pulsing animation for active step */
+.step-item.active {
+  animation: pulseBorder 2s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(99, 102, 241, 0);
+  }
+}
+
+/* Gradient text animation */
+.progress-percent {
+  animation: gradientShift 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Video player placeholder */
+.video-player::-webkit-media-controls-panel {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+/* Smooth form transitions */
+.form-section {
+  animation: fadeIn 0.4s ease;
+}
+
+/* History item hover effect */
+.history-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.history-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(99, 102, 241, 0.1),
+      transparent);
+  transition: left 0.5s ease;
+}
+
+.history-item:hover::before {
+  left: 100%;
+}
+
+/* Button hover animations */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:not(:disabled):hover::before {
+  left: 100%;
+}
+
+/* Success checkmark animation */
+.step-item.completed .step-number {
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Video preview entrance */
+.video-preview {
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Upload zone hover effects */
+.upload-zone {
+  position: relative;
+}
+
+.upload-zone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at center,
+      rgba(99, 102, 241, 0.1) 0%,
+      transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.upload-zone:hover::after {
+  opacity: 1;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Focus-visible for accessibility */
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,40 @@
+# PodcastAI - Two-Portrait Conversational Video Generator
+# Core dependencies
+
+# Image Processing
+pillow>=10.0.0
+opencv-python>=4.8.0
+rembg>=2.0.50
+
+# Text-to-Speech
+edge-tts>=6.1.9
+
+# LLM / Dialogue Generation
+google-generativeai>=0.3.0
+
+# Video Processing
+ffmpeg-python>=0.2.0
+
+# Cloud APIs (for scene generation)
+replicate>=0.20.0
+
+# PyTorch (for Wav2Lip)
+torch>=2.0.0
+torchaudio>=2.0.0
+torchvision>=0.15.0
+
+# Utilities
+python-dotenv>=1.0.0
+numpy>=1.24.0
+librosa>=0.10.0
+scipy>=1.10.0
+
+# CLI
+argparse
+tqdm>=4.65.0
+
+# Web API
+fastapi>=0.109.0
+uvicorn>=0.27.0
+python-multipart>=0.0.6
+websockets>=12.0
