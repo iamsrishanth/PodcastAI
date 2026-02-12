@@ -16,8 +16,8 @@ from .config import get_config
 
 # Wav2Lip model configuration
 WAV2LIP_REPO = "https://github.com/Rudrabha/Wav2Lip.git"
-WAV2LIP_CHECKPOINT_URL = "https://github.com/Rudrabha/Wav2Lip/releases/download/models/wav2lip_gan.pth"
-FACE_DETECTION_MODEL_URL = "https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth"
+WAV2LIP_CHECKPOINT_URL = "https://huggingface.co/Camenduru/Wav2Lip/resolve/main/checkpoints/wav2lip_gan.pth"
+FACE_DETECTION_MODEL_URL = "https://huggingface.co/Camenduru/Wav2Lip/resolve/main/checkpoints/s3fd.pth"
 
 
 def check_wav2lip_installation(models_dir: Path) -> dict:
